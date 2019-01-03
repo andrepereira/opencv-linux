@@ -8,3 +8,5 @@ git clone https://github.com/andrepereira/opencv-linux.git
 cd opencv-linux
 
 make install
+
+This file is based at Makefile from gocv.io project.
