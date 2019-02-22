@@ -2,7 +2,7 @@
 .PHONY: deps download build clean astyle
 
 # OpenCV version to use.
-OPENCV_VERSION?=4.0.0
+OPENCV_VERSION?=4.0.1
 
 # Temporary directory to put files into.
 TMP_DIR?=/tmp/
@@ -56,7 +56,7 @@ build:
 	cd $(TMP_DIR)opencv/opencv-$(OPENCV_VERSION)
 	mkdir build
 	cd build
-	cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=$(TMP_DIR)opencv/opencv_contrib-$(OPENCV_VERSION)/modules -D BUILD_DOCS=OFF BUILD_EXAMPLES=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=ON -D BUILD_opencv_java=OFF -D BUILD_opencv_python=OFF -D BUILD_opencv_python2=OFF -D BUILD_opencv_python3=OFF WITH_JASPER=OFF -DOPENCV_GENERATE_PKGCONFIG=ON ..
+	cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=$(TMP_DIR)opencv/opencv_contrib-$(OPENCV_VERSION)/modules -D BUILD_DOCS=ON BUILD_EXAMPLES=ON -D BUILD_TESTS=ON -D BUILD_PERF_TESTS=ON -D BUILD_opencv_java=OFF -D BUILD_opencv_python=OFF -D BUILD_opencv_python2=OFF -D BUILD_opencv_python3=OFF WITH_JASPER=OFF -DOPENCV_GENERATE_PKGCONFIG=ON ..
 	$(MAKE) -j $(shell nproc --all)
 	$(MAKE) preinstall
 	cd -
