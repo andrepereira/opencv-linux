@@ -1,5 +1,5 @@
 # opencv-linux
-Setup of OpenCV 4.1.1 at Linux to several distributions
+Setup of OpenCV 4.3.0 at Linux to several distributions
 Support Raspberry via Raspbian, too.
 TBB support enabled.
 
