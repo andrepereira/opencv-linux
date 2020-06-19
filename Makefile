@@ -16,11 +16,15 @@ distro_deps=
 ifneq ($(shell which dnf 2>/dev/null),)
 	distro_deps=deps_fedora
 else
+ifneq ($(shell which zypper 2>/dev/null),)
+        distro_deps=deps_opensuse
+else
 ifneq ($(shell which apt-get 2>/dev/null),)
 	distro_deps=deps_debian
 else
 ifneq ($(shell which yum 2>/dev/null),)
 	distro_deps=deps_rh_centos
+endif
 endif
 endif
 endif
@@ -33,6 +37,9 @@ deps_rh_centos:
 
 deps_fedora:
 	sudo dnf -y install pkgconf-pkg-config $(RPMS)
+
+deps_opensuse:
+	sudo zypper install -y pkgconf-pkg-config $(RPMS)
 
 deps_debian:
 	sudo apt-get -y update
