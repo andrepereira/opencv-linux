@@ -2,14 +2,14 @@
 .PHONY: deps download build clean astyle
 
 # OpenCV version to use.
-OPENCV_VERSION?=4.3.0
+OPENCV_VERSION?=4.5.0
 
 # Temporary directory to put files into.
 TMP_DIR?=/tmp/
 
 # Package list for each well-known Linux distribution
 RPMS=cmake curl git gtk2-devel libpng-devel libjpeg-devel libtiff-devel tbb tbb-devel libdc1394-devel unzip
-DEBS=unzip build-essential cmake curl git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev
+DEBS=unzip build-essential cmake curl git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev caffe-cpu libcaffe-cpu-dev
 
 # Detect Linux distribution
 distro_deps=
